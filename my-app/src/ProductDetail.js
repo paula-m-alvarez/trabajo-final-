@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class ProductDetail extends Component {
     constructor(props) {
@@ -6,6 +7,7 @@ class ProductDetail extends Component {
 
         this.state = {
             cosa: [],
+            categories: [],
             loading: true
 
         }
@@ -23,24 +25,47 @@ class ProductDetail extends Component {
                 console.log(data.item);
                 this.setState({
                     cosa: data.item,
+                    categories: data.categories,
                     loading: false
                 })
             })
     }
 
     render() {
+        const categories = this.state.categories.map((c, i) =>
+            <li>{c}{i < this.state.categories.length - 1 ? " > " : ""}</li>
+        )
+
         if (this.state.loading == true) {
             return <p>Cargando</p>
         }
         return (
-            <div>
-                <p>{this.state.cosa.title}</p>
-                <p> {this.state.cosa.price.amount} {this.state.cosa.price.decimal} </p>
-                <img src={this.state.cosa.picture} />
-                <p>{this.state.cosa.condition}</p>
-                <p>{this.state.cosa.free_shipping}</p>
-                <p>{this.state.cosa.sold_quiantity}</p>
-                <p>{this.state.cosa.description}</p>
+            <div className="todo">
+                <div className="detalleCategorias">
+                    <ul>{categories}</ul>
+                </div>
+
+                <div className="detalle">
+                    <div className="costado">
+                        <div className="imagenDelProducto">
+                            <img src={this.state.cosa.picture} />
+                        </div>
+
+                        <div className = "datazo">
+                            <p>{this.state.cosa.title}</p>
+                            <p> Vendidos - {this.state.cosa.sold_quantity}</p>
+                            <p> {this.state.cosa.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} {this.state.cosa.price.decimal.padEnd(2, 0)} </p>
+                            <p>{this.state.cosa.condition}</p>
+                            <button> Comprar </button>
+                        </div>
+                    </div>
+
+                    <div className="descripcion">
+                        <p>{this.state.cosa.description}</p>
+                    </div>
+                    
+                    <Link to="/items"><button> Volver </button> </Link>
+                </div>
             </div>
         )
     }

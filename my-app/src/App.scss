@@ -1,13 +1,116 @@
-.navbar {
-    background-color: #bc3b6a;
-    width: 100%;
+body {
+    background-color: rgb(238, 235, 235);
+}
 
+a:link, a:hover, a:visited, a:active, a {
+    text-decoration:none;
+    color:black;
+ }
+
+ ul {
+    display: flex;
+    list-style: none;
+
+}
+
+li {
+    list-style: none;
+
+}
+.navbar {
+    display: flex;
+    background-color: #bc3b6a;
+    height: 45px;
     .ada {
-        width: 80px;
+        height: 35px;
+        margin-left: 90px;
+        margin-right: 10px;
+        margin-top: 5px;
     }
     .input {
-        width: 40%;
+        width: 70%;
+    }
+
+    .icono {
+        padding: 1%;
+        margin: none;
     }
   
 }
 
+.subnavbar {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    margin: 0.5%;
+    .input {
+        width: 85%;
+        height: 21px;
+    }
+
+}
+
+.cadaProducto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    background-color: white;
+    margin-top: 10px;
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 30%;
+    }
+    .camion {
+        width: 30%;
+        height: 22px;
+        margin-left: 10px;
+    }
+
+    .ubicacion {
+        width: 30%;
+        height: 25%;
+    }
+
+    .imagen {
+        width: 20%;
+        .tamañoImagen {
+            width: 100%;
+        }
+        
+    }
+}
+
+.todo {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.costado {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+        img {
+            width: 100%;
+        }
+}
+
+
+.detalle {
+    width: 70%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-end;
+}

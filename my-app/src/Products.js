@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Camion from "./icono_camion.png"
 
 class Products extends Component {
   constructor(props) {
@@ -12,8 +13,6 @@ class Products extends Component {
     }
 
   }
-
-  // VOY A ESCRIBIR ALGO PORQUE REALMENTE QUIERO PUSHEAR ESTO
 
   traerCosas() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -51,29 +50,39 @@ class Products extends Component {
 
   render() {
 
-    const categories = this.state.categories.map((c) =>
-      <div>
-        <p>{c}</p>
-      </div>
+    const categories = this.state.categories.map((c, i) =>
+        <li key = {i}>{c}{i < this.state.categories.length - 1 ? " > " : ""}</li>
     )
 
-    const productos = this.state.productos.map((p) =>
-      <Link to={"/items/" + p.id}>
-        <div>
-          <p key={p.id} id={p.id}> {p.title} </p>
-          <p> {p.price.amount} {p.price.decimal} </p>
-          <img src={p.picture} />
-          <p> {p.condition}</p>
-          <p>{p.free_shipping}</p>
-          <p> {p.location}</p>
+
+    const productos = this.state.productos.map((p, i) =>
+      <Link className="cadaProducto" to={"/items/" + p.id}>
+        <div key = {i} className="producto">
+          <div className="imagen">
+            <img className="tamañoImagen" src={p.picture} />
+          </div>
+
+          <div className="info">
+            <div className="datos">
+              <p> $ {p.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} {p.price.decimal.padEnd(2, 0)} </p>
+              {p.free_shipping === true && <img className="camion" src={Camion} />}
+            </div>
+            
+            <p key={p.id} id={p.id}> {p.title} </p>
+
+          </div>
+
+          <div className="ubicacion">
+            <p> {p.location}</p>
+          </div>
         </div>
       </Link>
     )
 
     return (
       <div>
-        <div> {productos} </div>
-        <div> {categories} </div>
+        <ul>{categories} </ul>
+        <div className="madreDeLosProductos"> {productos} </div>
       </div>
     )
   }
@@ -81,5 +90,5 @@ class Products extends Component {
 
 export default Products;
 
-// Ver tema de los decimales que se vean 2 / operador ternario  ¿? 
-// maquetar
+
+

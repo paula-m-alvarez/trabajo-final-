@@ -14,10 +14,9 @@ router.get('/api/items', function (req, res) {
     .then(function (result) {
       let data = result.data.results
       let y = result.data.filters
-
+      
       for (let i = 0; i < data.length; i++) {
         let x = {
-          categoriessss: result.data.filters[0].values[0].path_from_root.map(c => c.name),
           id: data[i].id,
           title: data[i].title,
           price: {
@@ -27,7 +26,7 @@ router.get('/api/items', function (req, res) {
           },
           picture: data[i].thumbnail,
           condition: data[i].condition,
-          free_shipping: data[i].free_shipping,
+          free_shipping: data[i].shipping.free_shipping,
           location: data[i].address.city_name
 
         }
@@ -37,7 +36,7 @@ router.get('/api/items', function (req, res) {
       for (let j = 0; j < y.length; j++) {
         let h = y[j].values
         for (let a = 0; a < h.length; a++) {
-          productos.categories.push(h[a].name)
+          productos.categories = h[0].path_from_root.map((c) => c.name);
         }
       }
 

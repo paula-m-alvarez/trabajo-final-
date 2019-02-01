@@ -20,10 +20,12 @@ class Navbar extends Component {
     render() {
         return (
             <div className="navbar">
-                <img className = "ada" src={Ada} />
-                <input type="text" className = "input" placeholder="Nunca dejes de buscar" value={this.state.value} onChange={this.handleChange} />
-               
-                <Link to={"/items?search=" + this.state.value}> <button> <img className = "icono" src={Icono_Search} /> </button>  </Link>
+                <img className="ada" src={Ada} />
+                <div className = "subnavbar">
+                    <input type="text" className="input" placeholder="Nunca dejes de buscar" value={this.state.value} onChange={this.handleChange} />
+
+                    <Link to={"/items?search=" + this.state.value}> <button> <img className="icono" src={Icono_Search} /> </button>  </Link>
+                </div>
             </div>
         )
     }
