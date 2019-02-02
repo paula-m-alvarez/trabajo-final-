@@ -51,13 +51,13 @@ class Products extends Component {
   render() {
 
     const categories = this.state.categories.map((c, i) =>
-        <li key = {i}>{c}{i < this.state.categories.length - 1 ? " > " : ""}</li>
+      <li key={i}>{c}{i < this.state.categories.length - 1 ? " > " : ""}</li>
     )
 
 
     const productos = this.state.productos.map((p, i) =>
       <Link className="cadaProducto" to={"/items/" + p.id}>
-        <div key = {i} className="producto">
+        <div key={i} className="producto">
           <div className="imagen">
             <img className="tamañoImagen" src={p.picture} />
           </div>
@@ -67,8 +67,8 @@ class Products extends Component {
               <p> $ {p.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} {p.price.decimal.padEnd(2, 0)} </p>
               {p.free_shipping === true && <img className="camion" src={Camion} />}
             </div>
-            
-            <p key={p.id} id={p.id}> {p.title} </p>
+
+            <p key={p.id} id={p.id} className="primerTitulo">{p.title} </p>
 
           </div>
 

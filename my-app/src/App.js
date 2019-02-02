@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import './App.scss';
 import "./App.css";
 import Navbar from "./Navbar";
-import Products from "./Products" ;
-import ProductDetail from "./ProductDetail" ;
+import Products from "./Products";
+import ProductDetail from "./ProductDetail";
 
 class App extends Component {
   render() {
@@ -14,9 +14,9 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Navbar> </Navbar>
-            
-            <Route exact path= '/items' component = {Products}> </Route>
-            <Route exact path= '/items/:id' component = { ProductDetail } > </Route >
+
+            <Route exact path='/items' component={Products}> </Route>
+            <Route exact path='/items/:id' component={ProductDetail} > </Route >
           </div >
         </BrowserRouter >
       </div >

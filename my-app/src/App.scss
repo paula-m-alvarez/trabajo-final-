@@ -25,7 +25,7 @@ li {
         height: 35px;
         margin-left: 90px;
         margin-right: 10px;
-        margin-top: 5px;
+        margin-top: 4px;
     }
     .input {
         width: 70%;
@@ -56,12 +56,16 @@ li {
     justify-content: center;
 }
 
+.primerTitulo {
+    font-size: 15px;
+}
+
 .producto {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 55%;
     background-color: white;
-    margin-top: 10px;
+    margin-top: 4px;
     .info {
         display: flex;
         flex-direction: column;
@@ -72,11 +76,16 @@ li {
         width: 30%;
         height: 22px;
         margin-left: 10px;
+        position: relative;
+        bottom: 38px;
+        left: 72px;
     }
 
     .ubicacion {
         width: 30%;
         height: 25%;
+        color: grey;
+        text-align: center;
     }
 
     .imagen {
@@ -92,25 +101,82 @@ li {
     display: flex;
     margin-top: 20px;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center;    
 }
 
 .costado {
     width: 100%;
+    margin-bottom: 1px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-        img {
-            width: 100%;
-        }
+    .imagenDelProducto {
+        width: 50%;
+        margin-right: 45px;
+    }
+    img {
+        width: 100%;
+    }
+    .datazo {
+        margin-right: 40px;
+        margin-top: 15px;
+    }
 }
 
+.detalleCategorias {
+    width: 75%;
+
+}
+
+.vendidos {
+    font-size: 13px;
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.precio {
+    font-size: 35px;
+}
+
+.decimales {
+    font-size: 15px;
+    position: relative;
+    bottom: 15px;
+}
+
+.comprar {
+    width: 70%;
+    height: 9%;
+    border-radius: 4px;
+    background-color:rgb(40, 163, 212);
+    color: white;
+    border-style: none;
+    margin-left: 45px;
+}
+
+.descripcion {
+    text-align: inherit;
+    width: 50%;
+    color: gray;
+    text-align: -webkit-match-parent;
+    margin-left: 25px;
+}
 
 .detalle {
     width: 70%;
     background-color: white;
     display: flex;
     flex-direction: column;
-    // align-items: flex-end;
+}
+
+.volver {
+    width: 25%;
+    height: 30%;
+    background-color: #bc3b6a;
+    color: white;
+    border-style: none;
+    border-radius: 4px;
 }

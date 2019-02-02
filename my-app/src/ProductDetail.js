@@ -51,20 +51,18 @@ class ProductDetail extends Component {
                             <img src={this.state.cosa.picture} />
                         </div>
 
-                        <div className = "datazo">
-                            <p>{this.state.cosa.title}</p>
-                            <p> Vendidos - {this.state.cosa.sold_quantity}</p>
-                            <p> {this.state.cosa.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} {this.state.cosa.price.decimal.padEnd(2, 0)} </p>
-                            <p>{this.state.cosa.condition}</p>
-                            <button> Comprar </button>
+                        <div className="datazo">
+                            <p className="vendidos"> {this.state.cosa.condition} {this.state.cosa.sold_quantity} - Vendidos</p>
+                            <p className="titulo">{this.state.cosa.title}</p>
+                            <p className="precio"> ${this.state.cosa.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} <span className="decimales" >{this.state.cosa.price.decimal.padEnd(2, 0)} </span> </p>
+                            <button className="comprar"> Comprar </button>
                         </div>
                     </div>
 
                     <div className="descripcion">
                         <p>{this.state.cosa.description}</p>
+                        <Link to="/items"><button className="volver"> Volver </button> </Link>
                     </div>
-                    
-                    <Link to="/items"><button> Volver </button> </Link>
                 </div>
             </div>
         )

@@ -14,7 +14,7 @@ router.get('/api/items', function (req, res) {
     .then(function (result) {
       let data = result.data.results
       let y = result.data.filters
-      
+
       for (let i = 0; i < data.length; i++) {
         let x = {
           id: data[i].id,
@@ -95,5 +95,3 @@ router.get('/api/items/:id', function (req, res) {
 })
 
 module.exports = router;
-
-// categories: result.data.filters[0].values[0].path_from_root.map(c => c.name),

@@ -21,7 +21,7 @@ class Navbar extends Component {
         return (
             <div className="navbar">
                 <img className="ada" src={Ada} />
-                <div className = "subnavbar">
+                <div className="subnavbar">
                     <input type="text" className="input" placeholder="Nunca dejes de buscar" value={this.state.value} onChange={this.handleChange} />
 
                     <Link to={"/items?search=" + this.state.value}> <button> <img className="icono" src={Icono_Search} /> </button>  </Link>
